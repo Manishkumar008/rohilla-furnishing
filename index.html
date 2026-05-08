@@ -57,6 +57,26 @@
         .card-hover:hover .img-container img {
             transform: scale(1.1);
         }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+            padding: 1rem 0;
+        }
+        .loader {
+            border: 3px solid #f3f3f3; border-top: 3px solid #4f46e5; border-radius: 50%;
+            width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+ 
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
