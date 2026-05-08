@@ -100,11 +100,30 @@
                 </div>
 
                 <div class="hidden sm:block">
-                    <a href="https://wa.me/919211028670" target="_blank" class="bg-indigo-600 text-white px-7 py-2.5 rounded-full text-sm font-bold btn-shadow hover:bg-indigo-700 transition transform hover:scale-105 inline-block">
+                    <a href="https://wa.me/919210791070" target="_blank" class="bg-indigo-600 text-white px-7 py-2.5 rounded-full text-sm font-bold btn-shadow hover:bg-indigo-700 transition transform hover:scale-105 inline-block">
                         WhatsApp Now
+                    </a>
+                    <!-- Mobile Hamburger Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-gray-700 focus:outline-none p-2">
+                        <i id="menu-icon" class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden">
+                <div class="flex flex-col space-y-4 px-2 pb-6 font-bold text-sm uppercase tracking-widest text-gray-700">
+                    <a href="#home" onclick="toggleMobileMenu()" class="hover:text-indigo-600 py-2">Home</a>
+                    <a href="#services" onclick="toggleMobileMenu()" class="hover:text-indigo-600 py-2">Blinds</a>
+                    <a href="#Curtains" onclick="toggleMobileMenu()" class="hover:text-indigo-600 py-2">Curtains</a>
+                    <a href="#about" onclick="toggleMobileMenu()" class="hover:text-indigo-600 py-2">About</a>
+                    <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-indigo-600 py-2">Contact</a>
+                    <a href="https://wa.me/919210791070" target="_blank" class="text-indigo-600 pt-2 flex items-center gap-2">
+                       <i class="fab fa-whatsapp text-lg"></i> WhatsApp Support
                     </a>
                 </div>
             </div>
+            
         </div>
     </nav>
 
@@ -124,7 +143,7 @@
                 <button onclick="scrollToSection('contact')" class="bg-gray-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-gray-800 transition shadow-xl transform hover:-translate-y-1">
                     Book a Free Visit
                 </button>
-                <a href="https://wa.me/919211028670" target="_blank" class="bg-white text-gray-900 border-2 border-gray-100 px-10 py-4 rounded-2xl font-bold hover:border-indigo-400 transition shadow-sm text-center flex items-center justify-center gap-2">
+                <a href="https://wa.me/919210791070" target="_blank" class="bg-white text-gray-900 border-2 border-gray-100 px-10 py-4 rounded-2xl font-bold hover:border-indigo-400 transition shadow-sm text-center flex items-center justify-center gap-2">
                     <i class="fab fa-whatsapp text-green-500"></i> WhatsApp Us
                 </a>
             </div>
@@ -359,11 +378,11 @@
                             </div>
                             <div class="flex-1">
                                 <p class="font-bold text-lg mb-1 uppercase tracking-wider opacity-80">Call Support</p>
-                                <p class="text-white text-2xl font-bold tracking-widest">+91 9211028670</p>
+                                <p class="text-white text-2xl font-bold tracking-widest">+919210791070</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-5 pt-4">
-                            <a href="https://wa.me/919211028670" target="_blank" class="flex items-center gap-4 bg-white/10 hover:bg-white/20 transition-all p-4 rounded-2xl w-full border border-white/10">
+                            <a href="https://wa.me/919210791070" target="_blank" class="flex items-center gap-4 bg-white/10 hover:bg-white/20 transition-all p-4 rounded-2xl w-full border border-white/10">
                                 <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                                     <i class="fab fa-whatsapp text-xl"></i>
                                 </div>
@@ -411,9 +430,9 @@
                 Rohilla <span class="text-indigo-600">Furnishing</span>
             </div>
             <p class="text-gray-500 mb-4 max-w-md mx-auto">Kaushik Market, Gali No. 5, Gejha, Sector 93, Noida, Uttar Pradesh 201304</p>
-            <p class="text-indigo-600 font-bold mb-10 text-xl tracking-wider">+91 9211028670</p>
+            <p class="text-indigo-600 font-bold mb-10 text-xl tracking-wider">+919210791070</p>
             <div class="flex flex-wrap justify-center gap-8 text-sm font-bold text-gray-400 uppercase tracking-widest">
-                <a href="https://wa.me/919211028670" target="_blank" class="hover:text-indigo-600 transition">WhatsApp Support</a>
+                <a href="https://wa.me/919210791070" target="_blank" class="hover:text-indigo-600 transition">WhatsApp Support</a>
                 <a href="#about" class="hover:text-indigo-600 transition">Our Story</a>
                 <a href="#services" class="hover:text-indigo-600 transition">Our Products</a>
             </div>
@@ -425,6 +444,17 @@
 
     <script>
         const scriptURL = "https://script.google.com/macros/s/AKfycbzurC0PBlHAE3mNsSgaGTa8F7NTEAB5bUFy53x0ivacknEdZAsbtAmU8ZpPKYDyH5te/exec"; 
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('open');
+            if(menu.classList.contains('open')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        }
 
         function scrollToSection(id) {
             const element = document.getElementById(id);
