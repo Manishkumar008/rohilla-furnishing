@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -331,34 +332,40 @@
                 <h2 class="text-4xl md:text-5xl font-bold heading-font mb-4">Explore Premium Wallpapers</h2>
                 <div class="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
+
+            <div class="bg-gray-50 rounded-[2.5rem] overflow-hidden border border-gray-100 card-hover shadow-sm flex flex-col glide">
+                <div class="relative group">
+
+                    <div class="glide__track overflow-hidden" data-glide-el="track">
+                        <ul class="glide__slides flex">
+                            <li class="glide__slide">
+                                <img src="KUSUMWALLPAPER.PNG.png" class="w-full h-80 object-cover rounded-t-[2.5rem]" alt="Wallpaper 1">
+                            </li>
+                            <li class="glide__slide">
+                                <img src="KUSUMWALLPAPER2.PNG.png" class="w-full h-80 object-cover rounded-t-[2.5rem]" alt="Wallpaper 2">
+                            </li>
+                        </ul>   
+                    </div>  
+
+                    <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" data-glide-el="controls">
+                        <button class="bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-white pointer-events-auto" data-glide-dir="<">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button class="bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-white pointer-events-auto" data-glide-dir=">">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button> 
+                    </div>  
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Kusum Indian Wallpaper</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Rajasthani palace windows, floral-framed. Kusum brings the architecture of Indian heritage into a room.
+                    </p>
+                </div>    
+            </div>
+                
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                <div class="bg-gray-50 rounded-[2.5rem] overflow-hidden border border-gray-100 card-hover shadow-sm flex flex-col glide" data-glide-el="track">
-                    <div class="relative group">
-                        <div class="img-slider glide__slides flex">
-                            <img src="KUSUMWALLPAPER.PNG.png" class="slider-img glide__slide w-full h-full object-cover rounded-t-[2.5rem]" alt="Kusum Wallpaper 1">
-                            <img src="KUSUMWALLPAPER2.PNG.png" class="slider-img glide__slide w-full h-full object-cover" alt="Kusum Wallpaper 2">
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" data-glide-el="controls">
-                            <button class="bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-white pointer-events-auto" data-glide-dir="<" aria-label="Previous">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                </svg>
-                            </button>  
-                            
-                            <button class="bg-white/80 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-white pointer-events-auto" data-glide-dir=">" aria-label="Next">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>   
-                            </button>  
-                        </div>
-                    </div> <div class="p-8">    
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Kusum Indian Wallpaper</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Rajasthani palace windows, floral-framed. Kusum brings the architecture of Indian heritage into a room—not as decoration, but as structure.
-                        </p>
-                    </div> 
-                 </div>   
+               
                 
                 <!-- 2. Cotton Curtains - IMAGE CHANGE KARNE KI JAGAH -->
                 <div class="bg-gray-50 rounded-[2.5rem] overflow-hidden border border-gray-100 card-hover shadow-sm flex flex-col">
@@ -616,5 +623,19 @@
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sliders = document.querySelectorAll('.glide');
+    sliders.forEach(slider => {
+      new Glide(slider, {
+        type: 'carousel',
+        perView: 1,
+        gap: 0,
+        autoplay: 3000
+      }).mount();
+    });
+  });
+</script>
 </body>
 </html>
